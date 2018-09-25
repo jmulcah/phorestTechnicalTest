@@ -5,7 +5,6 @@ import json
 
 
 #Program allows user to request clients from Phorest API and post vouchers back for searched clients
-#Assuming that I can use clientID instead of businessID for post /api/business/{businessId}/voucher
 # kevin.walsh@phorest.com
 
 #get client info#
@@ -60,5 +59,6 @@ response = requests.post(postVoucherUrl, data=requestJson, headers=headers, auth
 strReponse = str(response)
 if strReponse == "<Response [400]>":
    print("€" + voucherAmount + " was successfully added to " + clientName + "'s account." )
-
+else:
+   print("Error, transaction failed.")
 
